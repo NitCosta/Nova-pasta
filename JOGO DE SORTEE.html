@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo de Adivinhação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f8ff;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    #mensagem {
+      font-weight: bold;
+      margin-top: 30px;
+      color: #333;
+    }
+
+    #tentativasRestantes {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Jogo de Adivinhação</h1>
+  <p>Tente adivinhar o número secreto entre 1 e 100. Você tem 10 tentativas!</p>
+
+  <input type="number" id="palpite" placeholder="Digite seu palpite">
+  <button id="btnChutar">Chutar</button>
+
+  <p id="mensagem"></p>
+  <p id="tentativasRestantes"></p>
+
+  <script>
+    let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+    let tentativasMaximas = 10;
+    let tentativas = 0;
+    let jogoEncerrado = false;
+
+    document.getElementById("btnChutar").addEventListener("click", function () {
+      if (jogoEncerrado) return;
+
+      const palpite = parseInt(document.getElementById("palpite").value);
+      const mensagem = document.getElementById("mensagem");
+      const tentativasRestantes = document.getElementById("tentativasRestantes");
+
+      if (isNaN(palpite) || palpite < 1 || palpite > 100) {
+        mensagem.textContent = "Por favor, digite um número entre 1 e 100.";
+        return;
+      }
+
+      tentativas++;
+
+      if (palpite === numeroSecreto) {
+        mensagem.textContent = `🎉 Você acertou! O número era ${numeroSecreto}.`;
+        jogoEncerrado = true;
+      } else if (tentativas >= tentativasMaximas) {
+        mensagem.textContent = `💥 Você perdeu! O número secreto era ${numeroSecreto}.`;
+        jogoEncerrado = true;
+      } else if (palpite < numeroSecreto) {
+        mensagem.textContent = "🔼 O número secreto é maior.";
+      } else {
+        mensagem.textContent = "🔽 O número secreto é menor.";
+      }
+
+      tentativasRestantes.textContent = `Tentativas restantes: ${tentativasMaximas - tentativas}`;
+    });
+  </script>
+</body>
+</html>

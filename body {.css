@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+  background-color: #f0f8ff;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+#mensagem {
+  font-weight: bold;
+  margin-top: 30px;
+  color: #333;
+}
+
+#tentativasRestantes {
+  color: #555;
+}
