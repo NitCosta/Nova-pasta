@@ -1,35 +1,39 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 50px;
-  background-color: #f0f8ff;
-}
-
-input {
-  padding: 10px;
-  font-size: 16px;
-  margin-top: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-#mensagem {
-  font-weight: bold;
-  margin-top: 30px;
-  color: #333;
-}
-
-#tentativasRestantes {
-  color: #555;
-}
-
-.teste-nico {
-  font-size: 24px;
-  margin-top: 20px;
-  color: #2e8b57;
-}
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+    background-color: #e6f7ff;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    width: 150px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #005f99;
+  }
+  
+  #resultado {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+  }
+  
